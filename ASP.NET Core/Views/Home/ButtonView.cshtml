@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewData["Title"] = "Choose the document to view or edit";
+}
+
+@using Syncfusion.EJ2
+
+<div>
+    <h2>Choose the document to view or edit</h2>
+    <div style="float:right">
+        <ejs-button id="loggedout" iconcss="e-icons e-close" class="button-css" title="Log Out" onclick="window.location.href ='http://localhost:51056/Home//Index'"></ejs-button>
+    </div>
+</div> 
+<div>
+    <div id="button">
+        <div id="user1">
+            <ejs-button id="user1my" content="Open my content" onclick="OpenUser1MyContent()"></ejs-button><br /><br />
+            <ejs-button id="user1_user2" content="Open user2 content" onclick="OpenUser2Content()"></ejs-button><br /><br />
+        </div>
+        <div id="user2">
+            <ejs-button id="user2my" content="Open my content" onclick="OpenUser2MyContent()"></ejs-button><br /><br />
+            <ejs-button id="user2_user1" content="Open user1 content" onclick="OpenUser1Content()"></ejs-button><br /><br />
+        </div>
+    </div>
+    <ejs-button id="view" content="View Document" onclick="OpenViewDocument()"></ejs-button>
+
+    <div id="documenteditor" style="display:none">
+        <div id='documenteditor_titlebar' class="e-de-ctn-title"></div>
+        <ejs-documenteditorcontainer id="container2" serviceUrl="/api/DocumentEditor/" enableToolbar=true created="onCreated" height="590px"></ejs-documenteditorcontainer>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        if ("@ViewBag.userName"== "User1") {
+            document.getElementById('user2').style.display = 'none';
+            document.getElementById('user1').style.display = 'block';
+        } else {
+            document.getElementById('user2').style.display = 'block';
+            document.getElementById('user1').style.display = 'none';
+        }
+    });
+    function OpenUser1MyContent() {
+
+        window.location.href = "http://localhost:51056/Home/Documenteditor?serviceName=" + 'ImportUser1File' + "&userName=" + '@ViewBag.userName';
+    }
+    function OpenUser2Content() {
+
+        window.location.href ="http://localhost:51056/Home/Documenteditor?serviceName=" + 'ImportUser2File' + "&userName=" + '@ViewBag.userName';
+
+        //documenteditor.editor.enforceProtection("123", "RevisionsOnly");
+    }
+    function OpenUser2MyContent() {
+        window.location.href = "http://localhost:51056/Home/Documenteditor?serviceName=" + 'ImportUser2File' + "&userName=" + '@ViewBag.userName';
+
+    }
+    function OpenUser1Content() {
+        window.location.href = "http://localhost:51056/Home/Documenteditor?serviceName=" + 'ImportUser1File' + "&userName=" + '@ViewBag.userName';
+
+    }
+    function OpenViewDocument() {
+        window.location.href = "http://localhost:51056/Home/Documenteditor?serviceName=" + 'ImportFile' + "&userName=" + '@ViewBag.userName';
+    }
+
+</script>
+
+<style>
+    .button-css {
+        float: right;
+        position: relative;
+        top: -51px;
+    }
+
+    .e-icons .e-close {
+        content: "\e7fc";
+    }
+</style>
