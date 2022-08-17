@@ -6,7 +6,7 @@ This example illustrates how to draft a Word document with multiple users in Syn
 
 At present Syncfusion Word processor (a.k.a.) Document editor component doesn't support collaborative editing functionality. So in this example, we have bookmarked the user specific content in the master document and synced the bookmarked content once a user saves their changes.
 
-## Sample explanation
+## Demo illustration
 
 We have added the bookmark for User1 and User2 in the master document which is in Files folder.
 
