@@ -1,11 +1,14 @@
 # Draft a Word document with multiple user
 This example illustrates how to draft a Word document with multiple users in Syncfusion Word processor component using bookmarks and track changes protection type.
 
+1. Using bookmarks, we have marked the content of each author.
+2. Using track changes protection type, we have stored the changes done by other users as tracked revisions in the document.
+
 At present Syncfusion Word processor (a.k.a.) Document editor component doesn't support collaborative editing functionality. So in this example, we have bookmarked the user specific content in the master document and synced the bookmarked content once a user saves their changes.
 
 ## Sample explanation
 
-We have added the bookmark for User1 and User 2 in the master document which is in Files folder.
+We have added the bookmark for User1 and User2 in the master document which is in Files folder.
 
 ### Login Page
 
