@@ -19,7 +19,7 @@ First page request the user name and password to navigate to next page. By defau
 Following button will display:
 * "View Document" button  to view the whole document.
 * "Open my content" - Current user(for eg. User1) will extract the User1 content from master document and view in Document editor.
-* "Open user1 or user2 content" - Another user (for eg. User2) will extract the User2 content from master documentand view in Document editor. 
+* "Open user1 or user2 content" - Another user (for eg. User2) will extract the User2 content from master document and view in Document editor. 
 * Using Close icon - you can navigate to first page.
 
 ### Document editor page 
